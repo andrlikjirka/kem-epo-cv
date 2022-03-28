@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
 
     echo "<a href='/kem-epo-cv/cviceni-4/knihy.php'>Zpět na knihy</a><br><br>";
 
-    $stmt = $conn->prepare("SELECT * FROM kniha WHERE id_kniha=$id");
+    $stmt = $conn->prepare("SELECT * FROM knihy WHERE id_kniha=$id");
     $stmt->execute();
 
     while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -18,8 +18,7 @@ if (isset($_GET['id'])) {
         $nazev = $result['nazev'];
         $autor = $result['autor'];
         $rok = $result['rok_vydani'];
-        $stran = $result['pocet_stran'];
 
-        echo "id = $id <br>Název knihy = $nazev <br>Autor knihy = $autor <br>Rok vydání=$rok <br>Počet stran=$stran";
+        echo "id = $id <br>Název knihy = $nazev <br>Autor knihy = $autor <br>Rok vydání=$rok";
     }
 }

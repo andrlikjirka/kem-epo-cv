@@ -3,7 +3,7 @@
 $conn = null;
 require_once ("db-connection.php");
 
-$stmt = $conn->prepare("SELECT * FROM kniha");
+$stmt = $conn->prepare("SELECT * FROM knihy");
 $stmt->execute();
 echo "<br>Knihy:<br>";
 while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
